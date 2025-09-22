@@ -26,7 +26,8 @@ TEST(TS1, TC1)
 
 	// Call refactored version
 	std::ifstream attendaceData{ attendanceDataFile }; //500개 데이터 입력
-	RefAttendance::ProcessAttendanceData(attendaceData);
+	RefAttendance::AttendanceManager objManager;
+	objManager.Process(attendaceData);
 
 	// restore old buffer
 	cout.rdbuf(oldCout);
